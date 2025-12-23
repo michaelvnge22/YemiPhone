@@ -1,0 +1,11 @@
+[project]
+name = "authtest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bcrypt>=4.3.0",
+    "fastapi[standard]>=0.115.14",
+    "prisma>=0.15.0",
+]

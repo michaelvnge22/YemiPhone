@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prendre rendez‑vous</title>
+
+  <style>
+    /* ====== PALETTE ====== */
+    :root{
+      --jaune-principal:#ffd400;
+      --bleu-bouton:#007bff;
+      --noir:#000;
+      --gris-clair:#f5f5f5;
+    }
+
+    /* ====== RESET ====== */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:"Segoe UI",Tahoma,sans-serif;line-height:1.4;color:var(--noir);}
+
+    .container{max-width:1200px;margin:auto;padding:0 1rem;}
+    .flex-between{display:flex;justify-content:space-between;align-items:center;}
+    .btn{
+      background:var(--bleu-bouton);color:#fff;padding:.6rem 1.6rem;border:none;
+      border-radius:999px;text-decoration:none;font-weight:600;display:inline-block;
+      cursor:pointer;
+    }
+
+    /* ====== NAVBAR ====== */
+    .navbar{background:var(--noir);color:#fff;padding:1rem 0;}
+    .navbar .logo img{height:20px;}
+    .navbar ul{list-style:none;display:flex;gap:2rem;}
+    .navbar a{text-decoration:none;color:#fff;font-size:.95rem;}
+
+    /* ====== FORMULAIRE ====== */
+    .booking-section{padding:3rem 0;background:var(--gris-clair);}
+    .booking-form{
+      background:#fff;max-width:600px;margin:auto;padding:2rem;border-radius:8px;
+      box-shadow:0 2px 6px rgba(0,0,0,.1);display:flex;flex-direction:column;gap:1rem;
+    }
+      .booking-form h1{font-size:1.6rem;text-align:center;margin-bottom:.5rem;}
+      .form-group{display:flex;flex-direction:column;gap:.25rem;}
+        .form-group label{font-weight:600;}
+        .booking-form input,
+        .booking-form textarea,
+        .booking-form select{
+          padding:.6rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;
+        }
+        .booking-form input[type="submit"]{margin-top:1rem;}
+
+    /* ====== FOOTER ====== */
+    .footer{
+        background:var(--noir);
+        color:#fff;
+        text-align:center;
+        padding: 1rem 0;
+        font-size:0.85rem;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container flex-between">
+      <img src="images/Logo1.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#">Réparations</a></li>
+          <li><a href="produits.html">Vente</a></li>
+          <li><a href="#">Tutoriels</a></li>
+          <li><a href="rendez-vous.html">Rendez‑vous</a></li>
+        </ul>
+      </nav>
+      <div>Tel : (+225) 07 05 03 74 31</div>
+    </div>
+  </header>
+
+  <!-- FORMULAIRE DE RÉSERVATION -->
+  <section class="booking-section">
+    <div class="container">
+      <form class="booking-form" action="#" method="post">
+        <h1>Prendre un rendez‑vous</h1>
+
+        <div class="form-group">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="07 05 03 74 31" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E‑mail (facultatif)</label>
+          <input type="email" id="email" name="email" placeholder="vous@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="appareil">Type d’appareil</label>
+          <select id="appareil" name="appareil" required>
+            <option value="">— Sélectionner —</option>
+            <option>iPhone</option>
+            <option>Samsung</option>
+            <option>Autre Android</option>
+            <option>Tablette</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="probleme">Problème rencontré</label>
+          <textarea id="probleme" name="probleme" rows="3" placeholder="Écran cassé, batterie faible…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date souhaitée</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="heure">Heure souhaitée</label>
+          <input type="time" id="heure" name="heure" required>
+        </div>
+
+        <input type="submit" value="Réserver" class="btn">
+      </form>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <p>&copy; 2025 – MkDev YemiPhone. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

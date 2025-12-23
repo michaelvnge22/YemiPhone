@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil</title>
+
+  <style>
+    /* ====== PALETTE DE COULEURS ====== */
+    :root {
+      --jaune-principal: #ffd400;   /* Jaune utilisé pour les éléments importants */
+      --bleu-bouton: #007bff;       /* Bleu utilisé pour les boutons */
+      --noir: #000;                 /* Couleur sombre pour le texte ou les fonds */
+      --gris-clair: #f5f5f5;        /* Fond de sections */
+      --gris-foncé: #808080;        /* Fond de "produits mis en avant" */
+    }
+
+    /* ====== RÉINITIALISATION DE BASE ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1;
+      color: var(--noir);
+      background-color: white;
+    }
+
+    /* ====== CLASSES UTILES ====== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ====== NAVIGATION ====== */
+    .navbar {
+      background-color: var(--noir);
+      color: white;
+      padding: rem 0;
+      
+    }
+
+    .navbar .logo img {
+      height: 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    /* ====== HERO BANNIÈRE ====== */
+    .hero img {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(60%);
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content .btn {
+      background-color: var(--jaune-principal);
+      color: var(--noir);
+    }
+
+    /* ====== PRODUITS MIS EN AVANT ====== */
+    .featured-products {
+      background-color: var(--gris-foncé);
+      padding: 5rem 0;
+    }
+
+    .featured-products .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5rem;
+      margin: 5rem 0;
+    }
+
+    .product-thumb {
+      width: 250px;
+      height: 250px;
+      border-radius: 5%;
+      border: 3px solid var(--noir);
+      object-fit: cover;
+    }
+
+    .btn {
+      background-color: var(--bleu-bouton);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    /* ====== NOS SERVICES ====== */
+    .services {
+      background-color: #f9f9f9;
+      padding: 3rem 1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-item img {
+        width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-item h3 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+  color: var(--clr-dark);
+}
+
+.service-item p {
+  padding: 0 1rem 1rem;
+  color: var(--clr-gray);
+}
+
+    /* ====== SECTION RENDEZ-VOUS ====== */
+    .booking {
+      background-color: var(--gris-clair);
+      padding: 3rem 0;
+    }
+
+    .booking .grid-2 {
+      display: flex;
+      flex-direction: column;
+    
+    }
+    .reserve{
+      border:none ;
+      margin-top: 15px;
+    }
+  
+
+    .booking h2 {
+      font-size: 1.8rem;
+      gap: 5rem;
+    }
+
+    .highlight {
+      color: var(--jaune-principal);
+    }
+
+    .booking img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      background-color: var(--noir);
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (min-width: 768px) {
+      .booking .grid-2 {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .hero img {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ====== BARRE DE NAVIGATION ====== -->
+  <header class="navbar">
+    <div class="container flex-between">
+      <img src="images/Logo1.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="rendez-vous.html">Réparations</a></li>
+          <li><a href="produits.html">Vente</a></li>
+          <li><a href="./">Tutoriels</a></li>
+          <li><a href="rendez-vous.html">Rendez-vous</a></li>
+        </ul>
+      </nav>
+      <div class="contact-phone">
+        Tel : (+225) 07 05 03 74 31
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== BANNIÈRE PRINCIPALE ====== -->
+  <section class="hero">
+  <div class="hero-overlay">
+    <img src="./images/hero-tools.jpg" alt="Outils de réparation">
+    <div class="hero-content">
+      <h1>Bienvenue chez YemiPhone</h1>
+      <p>Réparation à domicile, vente et tutoriels pour vos appareils mobiles</p>
+      <a href="login.html" class="btn">commencer</a>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== PRODUITS MIS EN AVANT ====== -->
+  <section class="featured-products text-center">
+    <div class="container">
+      <h2 class="section-title">Produits mis en avant</h2>
+
+      <div class="products-grid">
+        <img src="./images/produit1.jpg" alt="Produit 1" class="product-thumb">
+        <img src="./images/produit2.jpg" alt="Produit 2" class="product-thumb">
+        <img src="./images/produit3.jpeg" alt="Produit 3" class="product-thumb">
+        <img src="./images/produit4.jpeg" alt="Produit 4" class="product-thumb">
+        <img src="./images/produit5.jpg" alt="Produit 4" class="product-thumb">
+        <img src="./images/produit6.png" alt="Produit 4" class="product-thumb">
+      </div>
+
+      <a href="produits.html" class="btn">Tout parcourir</a>
+    </div>
+  </section>
+
+  <!-- ====== NOS SERVICES ====== -->
+  <section class="services" id="services">
+  <div class="container text-center">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="./images/service-réparation.jpg" alt="Réparation" />
+        <h3>Réparation rapide</h3>
+        <p>Remplacement d’écrans, batterie, connecteurs, et plus.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/service-vente.png" alt="Vente" />
+        <h3>Vente d’accessoires</h3>
+        <p>Chargeurs, coques, écouteurs et pièces détachées.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/service-tuto.jpeg" alt="Tutoriels" />
+        <h3>Tutoriels</h3>
+        <p>Guides pratiques pour diagnostiquer et réparer soi-même.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== SECTION RENDEZ-VOUS ====== -->
+  <section class="booking">
+    <div class="container grid-2">
+      <div>
+        <h2>Prendre un <span class="highlight">rendez-vous</span></h2>
+        <p>Réservez un créneau selon vos disponibilités pour une réparation rapide et sécurisé.</p>
+        <button class="reserve"><a href="rendez-vous.html" class="btn">Réserver maintenant</a></button>
+      </div>
+      <div>
+        <img src="images/booking-ui.png" alt="Interface de réservation" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PIED DE PAGE ====== -->
+  <footer class="footer">
+    <p>&copy; 2025 – MkDev YemiPhone. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

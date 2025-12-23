@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriel - YemiPhone</title>
+    
+    <style>
+            /* ====== PALETTE DE COULEURS ====== */
+        :root {
+            --jaune-principal: #ffd400;
+            --bleu-bouton: #007bff;
+            --noir: #000;
+            --gris-clair: #f5f5f5;
+            --gris-foncé: #6d8393;
+        }
+
+            /* ====== RESET DE BASE ====== */
+        *,*::before,*::after { margin:0;padding: 1px;;box-sizing:border-box; }
+        body { font-family:"Segoe UI",Tahoma,sans-serif; line-height:1.4; color:var(--noir); }
+
+            /* ====== CLASSES GLOBALES ====== */
+        .container   { max-width:1200px; margin:auto; padding:0 1rem; }
+        .flex-between{ display:flex; justify-content:space-between; align-items:center; }
+        .text-center { text-align:center; }
+        .btn{
+            background:var(--bleu-bouton); color:#fff; padding:.6rem 1.6rem;
+            border:none; border-radius:999px; text-decoration:none; font-weight:600;
+            display:inline-block;
+        }
+
+            /* ====== NAVBAR ====== */
+        .navbar{background:var(--noir);color:#fff;padding:0;}
+        .navbar .logo img{height:20px;}
+        .navbar ul{list-style:none;display:flex;gap:2rem;}
+        .navbar a{text-decoration:none;color:#fff;font-size:.95rem;}
+
+        .container {
+            max-width: 12000px;
+            margin: 5rem auto;
+            padding: 0rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tutorials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+        }
+
+        .tutorial {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .tutorial h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .tutorial p {
+            font-size: 0.95rem;
+        }
+
+        /* ====== FOOTER ====== */
+        .footer{background:var(--noir);color:#fff;text-align:center;padding:1rem 0;font-size:.85rem;}
+
+            /* ====== RESPONSIVE ====== */
+        @media(min-width:768px){
+        .products-grid{justify-content:flex-start;}
+        }
+
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container flex-between">
+      <img src="images/Logo1.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="#">Réparations</a></li>
+          <li><a href="produits.html">Vente</a></li>
+          <li><a href="rendez-vous.html">Rendez‑vous</a></li>
+        </ul>
+      </nav>
+      <div>Tel : (+225) 07 05 03 74 31</div>
+    </div>
+  </header>
+  <section class="container">
+        <h2 class="section-title">Tutoriels & Astuces</h2>
+        <div class="tutorials">
+            <div class="tutorial">
+                <h3>Comment protéger son téléphone ?</h3>
+                <p>Découvrez les bonnes pratiques pour prolonger la durée de vie de votre smartphone.</p>
+            </div>
+            <div class="tutorial">
+                <h3>Changer une batterie en toute sécurité</h3>
+                <p>Un guide simple pour remplacer la batterie de votre appareil sans danger.</p>
+            </div>
+            <div class="tutorial">
+                <h3>Reconnaître une pièce d’origine</h3>
+                <p>Évitez les contrefaçons en apprenant à identifier les composants de qualité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+        <p>&copy; 2025 – MkDev YemiPhone. Tous droits réservés.</p>
+    </footer>    
+</body>
+</html>

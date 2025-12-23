@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande - YemiPhone</title>
+</head>
+
+<style>
+    /* ====== PALETTE DE COULEURS ====== */
+    :root {
+      --jaune-principal: #ffd400;
+      --bleu-bouton: #007bff;
+      --noir: #000;
+      --gris-clair: #f5f5f5;
+      --gris-foncé: #6d8393;
+    }
+
+    /* ====== RESET DE BASE ====== */
+    *,*::before,*::after { margin:0;padding:0;box-sizing:border-box; }
+    body { font-family:"Segoe UI",Tahoma,sans-serif; line-height:1.4; color:var(--noir); }
+
+    /* ====== CLASSES GLOBALES ====== */
+    .container   { max-width:1200px; margin:auto; padding:0 1rem; }
+    .flex-between{ display:flex; justify-content:space-between; align-items:center; }
+    .text-center { text-align:center; }
+    .btn{
+      background:var(--bleu-bouton); color:#fff; padding:.6rem 1.6rem;
+      border:none; border-radius:999px; text-decoration:none; font-weight:600;
+      display:inline-block;
+    }
+
+    /* ====== NAVBAR ====== */
+    .navbar{background:var(--noir);color:#fff;padding:1rem 0;}
+    .navbar .logo img{height:20px;}
+    .navbar ul{list-style:none;display:flex;gap:2rem;}
+    .navbar a{text-decoration:none;color:#fff;font-size:.95rem;}
+
+    .confirmation-container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .confirmation-container h1 {
+        color: #28a745;
+        font-size: 32px;
+    }
+    .commande-resume {
+        margin-top: 20px;
+        text-align: left;
+    }
+    .commande-resume ul {
+        list-style: none;
+        padding: 0;
+    }
+    .commande-resume li {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .total {
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .btn-retour {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    .btn-retour:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+    <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container flex-between">
+      <img src="images/Logo1.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="#">Réparations</a></li>
+          <li><a href="produits.html">Vente</a></li>
+          <li><a href="#">Tutoriels</a></li>
+          <li><a href="rendez-vous.html">Rendez‑vous</a></li>
+        </ul>
+      </nav>
+      <div>Tel : (+225) 07 05 03 74 31</div>
+    </div>
+  </header>
+  <div class="confirmation-container">
+        <h1>🎉 Merci pour votre commande !</h1>
+        <p>Votre commande a été enregistrée avec succès.</p>
+
+        <div class="commande-resume">
+            <h2>Résumé de votre commande :</h2>
+            <ul>
+                <li>Écran iPhone 12 — x1 (30 000 FCFA)</li>
+                <li>Batterie Samsung S10 — x2 (30 000 FCFA)</li>
+            </ul>
+            <p class="total">Total : 60 000 FCFA</p>
+        </div>
+
+        <div class="section-info">
+            <p><strong>Quantité totale d’articles :</strong> 3</p>
+            <p><strong>Mode de paiement :</strong> Paiement à la livraison</p>
+            <p><strong>Lieu de livraison :</strong> Cocody, Abidjan, Côte d’Ivoire</p>
+        </div>
+
+        <a href="/" class="btn-retour">Retour à l’accueil</a>
+    </div>
+</body>
+</html>
